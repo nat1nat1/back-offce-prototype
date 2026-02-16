@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+
+  /* Professional Dashboard Palette - Clean White/Gray with Navy Accents */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  
+  --primary: 222 47% 11%; /* Navy/Black */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222 47% 11%;
+  
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215 16% 47%;
+  
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222 47% 11%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 222 47% 11%;
+  
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Status Badge Colors */
+  .badge-reserved {
+    @apply bg-orange-100 text-orange-700 hover:bg-orange-200 border-orange-200;
+  }
+  .badge-paid {
+    @apply bg-green-100 text-green-700 hover:bg-green-200 border-green-200;
+  }
+  .badge-created {
+    @apply bg-blue-100 text-blue-700 hover:bg-blue-200 border-blue-200;
+  }
+  
+  /* Sidebar Utilities */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground;
+  }
+  .sidebar-link.active {
+    @apply bg-secondary text-secondary-foreground font-semibold;
+  }
+  
+  /* Card Hover Effect */
+  .hover-card-effect {
+    @apply transition-all duration-200 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5;
+  }
+}
